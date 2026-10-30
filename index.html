@@ -12,15 +12,21 @@
 </head>
 <body>
 
-<!-- 背景：金屬扭轉環。把你的 3D 渲染圖（透明 PNG）放到 assets/ring.png 就會自動取代預設環 -->
+<!-- 背景：金屬扭轉環。把透明 PNG 放到 assets/ring.png 會自動取代預設環 -->
 <div class="bg" aria-hidden="true">
+  <div class="floor"></div>
   <div class="glow g1"></div>
   <div class="glow g2"></div>
+  <div class="cursor-glow"></div>
   <div class="ring" id="ring">
     <div class="ring-fallback"></div>
     <img src="assets/ring.png" alt="">
   </div>
 </div>
+<div class="fx scan" aria-hidden="true"></div>
+<div class="fx noise" aria-hidden="true"></div>
+<div class="fx vignette" aria-hidden="true"></div>
+<div class="hud" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
 <main class="stage">
 
@@ -28,20 +34,22 @@
   <section id="screen-enter" class="screen active">
     <form id="gate" autocomplete="off">
       <label for="code" class="title">請輸入你的代碼</label>
-      <input id="code" name="code" type="text" maxlength="40"
-             autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="text">
-      <button type="submit" class="btn">進入</button>
+      <div class="field">
+        <input id="code" name="code" type="text" maxlength="40"
+               autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="text">
+      </div>
+      <button type="submit" class="btn"><span>進入</span></button>
     </form>
   </section>
 
   <!-- 畫面 2：結果 -->
-  <section id="screen-result" class="screen">
+  <section id="screen-result" class="screen wide">
     <div class="result">
-      <p class="line code-line">代碼 #<span id="out-code"></span></p>
+      <p class="code-line">代碼 #<span id="out-code"></span></p>
       <p class="hello" id="hello">你好</p>
       <p class="err glitch" data-text="404">404</p>
       <p class="nf">not found</p>
-      <p class="count" id="count" aria-live="off">0</p>
+      <div class="count" id="count" role="timer" aria-live="off"></div>
     </div>
   </section>
 
