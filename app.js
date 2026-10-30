@@ -2,7 +2,9 @@
   'use strict';
   const config = window.ALBUM_CONFIG || {};
   const releaseTimestamp = Date.parse(config.releaseAt);
-  const target = Number.isFinite(releaseTimestamp) ? releaseTimestamp : Date.now() + 15 * 86400 * 1000;
+  // Everyone shares the SAME release time; no per-user countdown or password checking.
+  // Invalid configuration must not start a different private countdown for every visitor.
+  const target = Number.isFinite(releaseTimestamp) ? releaseTimestamp : Date.now();
   const form = document.getElementById('code-form');
   const input = document.getElementById('code-input');
   const error = document.getElementById('code-error');
@@ -21,15 +23,13 @@
 
   function tick() {
     const remaining = Math.max(0, Math.ceil((target - Date.now()) / 1000));
+    // 保持純數字總秒數，不顯示千分位逗號（例如 1296000）。
     timer.textContent = String(remaining);
     timer.setAttribute('aria-label', `距離發行還有 ${remaining} 秒`);
-    const label = document.querySelector('.timer-caption');
-    if (remaining === 0) {
-      label.textContent = config.finishedLabel || 'RELEASED';
-      document.body.classList.add('has-released');
-    } else {
-      label.textContent = 'SECONDS UNTIL RELEASE';
-      document.body.classList.remove('has-released');
+    // Stop at zero. Never switch to a third page, announcement, or unlock state.
+    if (remaining === 0 && tickId !== null) {
+      clearInterval(tickId);
+      tickId = null;
     }
   }
 
@@ -44,11 +44,12 @@
   }
 
   function startCountdown(value) {
-    code.textContent = '#' + value;
+    code.textContent = value;
     setScreen(true);
-    tick();
     if (tickId !== null) clearInterval(tickId);
-    tickId = setInterval(tick, 1000);
+    tickId = null;
+    tick();
+    if (target > Date.now()) tickId = setInterval(tick, 1000);
     // 軟體鍵盤關閉後才聚焦，避免移動裝置畫面突然跳動。
     input.blur();
     phoneScreen.classList.remove('authenticating');
@@ -63,6 +64,7 @@
     overlay.setAttribute('aria-hidden', 'true');
     setScreen(false);
     error.textContent = '';
+    input.setAttribute('aria-invalid', 'false');
     input.value = '';
     busy = false;
     input.focus({ preventScroll: true });
@@ -82,8 +84,7 @@
     event.preventDefault();
     if (busy) return;
     const value = input.value.trim();
-    if (!value) return invalid('請先輸入四位數代碼');
-    if (value !== (config.demoCode || '1030')) return invalid('代碼錯誤，請再試一次');
+    if (!/^[0-9]{1,12}$/.test(value)) return invalid('請輸入 1–12 位數字編號');
     error.textContent = '';
     input.setAttribute('aria-invalid', 'false');
     busy = true;
@@ -91,11 +92,14 @@
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
     overlay.setAttribute('aria-hidden', 'false');
     phoneScreen.classList.add('authenticating');
-    // 動畫僅為視覺效果。這是概念展示，非安全驗證。
+    // 純視覺轉場效果，不提供會員登入或密碼驗證。
     transitionId = setTimeout(() => { transitionId = null; startCountdown(value); }, 1100);
   });
   reset.addEventListener('click', showEntry);
   input.addEventListener('input', () => {
+    // Use a string rather than Number(), so numbers like 0012 keep their leading zeroes.
+    const digits = input.value.replace(/[^0-9]/g, '').slice(0, 12);
+    if (input.value !== digits) input.value = digits;
     error.textContent = '';
     input.setAttribute('aria-invalid', 'false');
     phoneScreen.classList.remove('input-shake');

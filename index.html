@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#090a0c" />
   <meta name="description" content="404 — 專輯發行倒數互動網站概念展示。" />
   <meta property="og:title" content="404 / COUNTDOWN — Concept Demo" />
-  <meta property="og:description" content="輸入代碼，啟動專輯發行倒數。互動原型展示。" />
+  <meta property="og:description" content="自訂你的編號，一起倒數到專輯發行。互動原型展示。" />
   <title>404 — Album Countdown / Concept Demo</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
@@ -68,21 +68,21 @@
               <div class="phone-screen" id="phone-screen">
                 <div class="screen-scanline" aria-hidden="true"></div>
                 <div class="access-overlay" id="access-overlay" aria-hidden="true">
-                  <div class="access-kicker">AUTHORIZATION / 404</div>
-                  <div class="access-big">ACCESS<br><em>GRANTED</em></div>
+                  <div class="access-kicker">IDENTITY / 404</div>
+                  <div class="access-big">SIGNAL<br><em>RECEIVED</em></div>
                   <div class="access-progress"><i></i></div>
-                  <div class="access-bottom">DECODING SIGNAL ...</div>
+                  <div class="access-bottom">SYNCING COUNTDOWN ...</div>
                 </div>
                 <div class="dynamic-island" aria-hidden="true"></div>
                 <div class="screen-tophint" aria-hidden="true"><span class="tiny-cross">✳</span><span>404 / TEASER</span><span>✳</span></div>
 
                 <div class="screen-content" id="entry-screen">
                   <div class="screen-content-inner">
-                    <p class="instruction-zh">請輸入你的代碼</p>
-                    <p class="instruction-en">ENTER YOUR ACCESS CODE</p>
+                    <p class="instruction-zh">請輸入你的編號</p>
+                    <p class="instruction-en">ENTER YOUR NUMBER</p>
                     <form class="code-form" id="code-form" autocomplete="off" novalidate>
-                      <label class="sr-only" for="code-input">代碼</label>
-                      <input id="code-input" name="code" type="text" autocapitalize="off" spellcheck="false" autocomplete="off" inputmode="numeric" maxlength="4" pattern="[0-9]*" placeholder="" aria-describedby="code-error" />
+                      <label class="sr-only" for="code-input">自訂數字編號</label>
+                      <input id="code-input" name="code" type="text" autocapitalize="off" spellcheck="false" autocomplete="off" inputmode="numeric" maxlength="12" pattern="[0-9]*" placeholder="例如 5100" aria-describedby="code-error" />
                       <p class="input-error" id="code-error" role="status" aria-live="polite"></p>
                       <button class="enter-button" type="submit">進入 <span aria-hidden="true">↗</span></button>
                     </form>
@@ -92,15 +92,15 @@
 
                 <div class="screen-content is-hidden" id="countdown-screen" aria-hidden="true">
                   <div class="screen-content-inner countdown-inner">
-                    <div class="code-display">代碼 <span id="display-code">#19870209</span></div>
+                    <div class="code-display">YOUR NUMBER <span id="display-code">5100</span></div>
                     <p class="hello">你好</p>
                     <div class="glitch-404" aria-label="404" data-text="404">404<span class="glitch-ghost" aria-hidden="true">404</span></div>
                     <p class="not-found">not found</p>
                     <div class="timer-area">
-                      <div class="timer-number" id="timer-number" aria-label="距離發布秒數">1296000</div>
-                      <span class="timer-caption">SECONDS UNTIL RELEASE</span>
+                      <div class="timer-number" id="timer-number" aria-label="距離發行的總秒數">1296000</div>
+                      <span class="timer-caption">TOTAL SECONDS REMAINING</span>
                     </div>
-                    <button class="restart-button" id="restart-button" type="button"><span aria-hidden="true">↶</span> 重新輸入代碼</button>
+                    <button class="restart-button" id="restart-button" type="button"><span aria-hidden="true">↶</span> 重新選擇編號</button>
                   </div>
                 </div>
 
@@ -108,29 +108,29 @@
               </div>
             </div>
           </div>
-          <p class="under-phone">INPUT → ACCESS → COUNTDOWN</p>
+          <p class="under-phone">YOUR NUMBER → SIGNAL → COUNTDOWN</p>
         </div>
 
         <div class="side-copy side-copy-right" id="annotation-entry" aria-hidden="true">
           <div class="annotation-line"><span class="ann-circle"></span></div>
-          <span class="annotation-title">01 / ENTER CODE</span>
-          <p>輸入展示代碼 1030<br>體驗進入專屬倒數畫面</p>
+          <span class="annotation-title">01 / SET YOUR NUMBER</span>
+          <p>自訂任意數字編號<br>在倒數畫面展示你的號碼</p>
         </div>
         <div class="side-copy side-copy-right is-hidden" id="annotation-timer" aria-hidden="true">
           <div class="annotation-line"><span class="ann-circle"></span></div>
           <span class="annotation-title">02 / RELEASE CLOCK</span>
-          <p>代碼隨頁面顯示<br>每秒即時倒數至發行時間</p>
+          <p>顯示你自訂的編號<br>全部粉絲同步倒數至 0</p>
         </div>
         <div class="bottom-edge"><span>VISUAL CONCEPT / PREVIEW ONLY</span><span class="bottom-center">NO SIGNAL IS EVER LOST.</span><span>© 404 EXPERIENCE</span></div>
       </section>
 
       <section class="info-band" aria-label="展示資訊">
         <span><span class="info-spark">✳</span> INTERACTIVE WEB PREVIEW</span>
-        <p>輸入展示代碼 <strong>1030</strong>，體驗「代碼解鎖 → 專輯倒數」。</p>
+        <p>輸入你想要的數字（1–12 位），編號同步顯示於倒數畫面；總秒數每秒更新至 <strong>0</strong>。</p>
         <span class="info-issue">DEMO · NOT FINAL</span>
       </section>
     </main>
-    <footer class="footer">此為客戶提案展示版。正式代碼規則、發行日期、素材與網站使用期限，待需求確認後設定。</footer>
+    <footer class="footer">此為客戶提案展示版。正式發行日期、視覺素材與網站使用期限，待需求確認後設定。</footer>
   </div>
 </body>
 </html>
