@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#090a0c" />
+  <meta name="description" content="404 — 專輯發行倒數互動網站概念展示。" />
+  <meta property="og:title" content="404 / COUNTDOWN — Concept Demo" />
+  <meta property="og:description" content="輸入代碼，啟動專輯發行倒數。互動原型展示。" />
+  <title>404 — Album Countdown / Concept Demo</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="site">
+    <header class="topbar" aria-label="網站標題">
+      <a class="wordmark" href="." aria-label="404 回到開始畫面"><span class="logo-frame">4<span class="broken-zero">0</span>4</span><span class="logo-sep"></span><span class="wordmark-copy">ALBUM<br>EXPERIENCE</span></a>
+      <div class="top-right"><span class="top-small">INTERACTIVE TEASER</span><span class="demo-flag"><span class="demo-dot"></span>CONCEPT DEMO</span></div>
+    </header>
+
+    <main class="main">
+      <section class="experience" aria-label="404 互動倒數展示">
+        <div class="background-halo halo-one"></div>
+        <div class="background-halo halo-two"></div>
+        <div class="grain" aria-hidden="true"></div>
+        <div class="ambient-beam" aria-hidden="true"></div>
+        <div class="scan-track" aria-hidden="true"></div>
+        <div class="stage-label stage-label-left">FIG. 01 / DIGITAL EXPERIENCE</div>
+        <div class="stage-label stage-label-right">RELEASE // COUNTDOWN</div>
+
+        <!-- Original vector artwork drawn for this concept preview. No third-party image required. -->
+        <svg class="chrome-art" viewBox="0 0 650 720" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="chrome1" x1="0%" y1="3%" x2="93%" y2="90%">
+              <stop offset="0%" stop-color="#03060a"/><stop offset="10%" stop-color="#eff9ff"/><stop offset="21%" stop-color="#889aa9"/><stop offset="29%" stop-color="#1a2733"/><stop offset="39%" stop-color="#fbfdff"/><stop offset="51%" stop-color="#7c8b9c"/><stop offset="60%" stop-color="#0c111b"/><stop offset="73%" stop-color="#dde9f5"/><stop offset="85%" stop-color="#34404c"/><stop offset="100%" stop-color="#f5fbff"/>
+            </linearGradient>
+            <linearGradient id="chrome2" x1="16%" y1="0%" x2="81%" y2="100%">
+              <stop offset="0%" stop-color="#f7fcff"/><stop offset="19%" stop-color="#384653"/><stop offset="34%" stop-color="#f8fdff"/><stop offset="52%" stop-color="#1b2533"/><stop offset="63%" stop-color="#abbccc"/><stop offset="80%" stop-color="#121824"/><stop offset="100%" stop-color="#eef9ff"/>
+            </linearGradient>
+            <linearGradient id="chrome3" x1="0%" y1="0%" x2="100%" y2="80%">
+              <stop offset="0%" stop-color="#0b111a"/><stop offset="23%" stop-color="#deebfa"/><stop offset="33%" stop-color="#667888"/><stop offset="40%" stop-color="#fbfeff"/><stop offset="64%" stop-color="#182534"/><stop offset="78%" stop-color="#cedce6"/><stop offset="100%" stop-color="#0a121a"/>
+            </linearGradient>
+            <radialGradient id="bgGlow"><stop stop-color="#b0c3d6" stop-opacity=".18"/><stop offset="1" stop-color="#0b0d11" stop-opacity="0"/></radialGradient>
+            <filter id="shadow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="17"/></filter>
+          </defs>
+          <ellipse cx="292" cy="405" rx="263" ry="280" fill="url(#bgGlow)"/>
+          <path d="M90 426 C108 270 314 142 466 201 C548 231 574 350 495 430 C445 481 364 490 290 455 C229 427 206 391 138 391 C100 392 65 412 41 437 C73 414 95 420 90 426Z" fill="#a8c5e3" opacity=".25" filter="url(#shadow)"/>
+          <path d="M43 372 C83 248 218 161 340 181 C432 196 482 242 493 295 C498 322 481 345 451 356 C467 311 431 284 370 288 C277 294 244 355 171 386 C115 411 75 413 43 372Z" fill="url(#chrome1)" stroke="#deebf4" stroke-opacity=".33" stroke-width="1.5"/>
+          <path d="M92 386 C128 330 215 280 301 280 C366 280 402 317 395 370 C388 421 317 464 251 483 C204 496 164 494 112 464 C173 470 224 447 244 415 C273 370 248 349 220 344 C172 333 127 362 92 386Z" fill="url(#chrome2)" stroke="#dfefff" stroke-opacity=".45" stroke-width="1"/>
+          <path d="M260 202 C310 157 393 151 458 202 C511 242 523 329 481 390 C446 442 376 457 323 425 C359 415 409 378 428 334 C454 266 395 230 332 228 C305 227 280 226 260 202Z" fill="url(#chrome3)" stroke="#f4faff" stroke-opacity=".38" stroke-width="1.5"/>
+          <path d="M153 421 C217 419 267 402 303 362 C341 319 377 298 418 302" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"/>
+          <path d="M57 361 C135 237 263 182 348 191" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"/>
+          <path d="M271 204 C341 170 428 190 466 256" fill="none" stroke="#f5fdff" stroke-opacity=".47" stroke-width="2"/>
+        </svg>
+
+        <div class="side-copy side-copy-left" aria-hidden="true"><span>404</span><span>NOT FOUND</span><div class="side-tick"></div><small>AN EXPERIMENT<br>IN ANTICIPATION</small></div>
+
+        <div class="central">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE COUNTDOWN BEGINS <span class="eyebrow-line"></span></p>
+          <div class="phone-wrap">
+            <div class="phone" aria-label="手機介面操作展示">
+              <div class="phone-shine"></div>
+              <div class="phone-side side-button-one"></div>
+              <div class="phone-side side-button-two"></div>
+              <div class="phone-side side-button-right"></div>
+              <div class="phone-screen" id="phone-screen">
+                <div class="screen-scanline" aria-hidden="true"></div>
+                <div class="access-overlay" id="access-overlay" aria-hidden="true">
+                  <div class="access-kicker">AUTHORIZATION / 404</div>
+                  <div class="access-big">ACCESS<br><em>GRANTED</em></div>
+                  <div class="access-progress"><i></i></div>
+                  <div class="access-bottom">DECODING SIGNAL ...</div>
+                </div>
+                <div class="dynamic-island" aria-hidden="true"></div>
+                <div class="screen-tophint" aria-hidden="true"><span class="tiny-cross">✳</span><span>404 / TEASER</span><span>✳</span></div>
+
+                <div class="screen-content" id="entry-screen">
+                  <div class="screen-content-inner">
+                    <p class="instruction-zh">請輸入你的代碼</p>
+                    <p class="instruction-en">ENTER YOUR ACCESS CODE</p>
+                    <form class="code-form" id="code-form" autocomplete="off" novalidate>
+                      <label class="sr-only" for="code-input">代碼</label>
+                      <input id="code-input" name="code" type="text" autocapitalize="off" spellcheck="false" autocomplete="off" inputmode="numeric" maxlength="4" pattern="[0-9]*" placeholder="" aria-describedby="code-error" />
+                      <p class="input-error" id="code-error" role="status" aria-live="polite"></p>
+                      <button class="enter-button" type="submit">進入 <span aria-hidden="true">↗</span></button>
+                    </form>
+                    <div class="subtext">[ NO SIGNAL IS EVER LOST ]</div>
+                  </div>
+                </div>
+
+                <div class="screen-content is-hidden" id="countdown-screen" aria-hidden="true">
+                  <div class="screen-content-inner countdown-inner">
+                    <div class="code-display">代碼 <span id="display-code">#19870209</span></div>
+                    <p class="hello">你好</p>
+                    <div class="glitch-404" aria-label="404" data-text="404">404<span class="glitch-ghost" aria-hidden="true">404</span></div>
+                    <p class="not-found">not found</p>
+                    <div class="timer-area">
+                      <div class="timer-number" id="timer-number" aria-label="距離發布秒數">1296000</div>
+                      <span class="timer-caption">SECONDS UNTIL RELEASE</span>
+                    </div>
+                    <button class="restart-button" id="restart-button" type="button"><span aria-hidden="true">↶</span> 重新輸入代碼</button>
+                  </div>
+                </div>
+
+                <div class="screen-bottom"><span>EST. 20XX</span><span>LOADING THE FUTURE_</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="under-phone">INPUT → ACCESS → COUNTDOWN</p>
+        </div>
+
+        <div class="side-copy side-copy-right" id="annotation-entry" aria-hidden="true">
+          <div class="annotation-line"><span class="ann-circle"></span></div>
+          <span class="annotation-title">01 / ENTER CODE</span>
+          <p>輸入展示代碼 1030<br>體驗進入專屬倒數畫面</p>
+        </div>
+        <div class="side-copy side-copy-right is-hidden" id="annotation-timer" aria-hidden="true">
+          <div class="annotation-line"><span class="ann-circle"></span></div>
+          <span class="annotation-title">02 / RELEASE CLOCK</span>
+          <p>代碼隨頁面顯示<br>每秒即時倒數至發行時間</p>
+        </div>
+        <div class="bottom-edge"><span>VISUAL CONCEPT / PREVIEW ONLY</span><span class="bottom-center">NO SIGNAL IS EVER LOST.</span><span>© 404 EXPERIENCE</span></div>
+      </section>
+
+      <section class="info-band" aria-label="展示資訊">
+        <span><span class="info-spark">✳</span> INTERACTIVE WEB PREVIEW</span>
+        <p>輸入展示代碼 <strong>1030</strong>，體驗「代碼解鎖 → 專輯倒數」。</p>
+        <span class="info-issue">DEMO · NOT FINAL</span>
+      </section>
+    </main>
+    <footer class="footer">此為客戶提案展示版。正式代碼規則、發行日期、素材與網站使用期限，待需求確認後設定。</footer>
+  </div>
+</body>
+</html>
