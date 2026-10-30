@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>請輸入你的代碼</title>
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 背景：金屬扭轉環。把你的 3D 渲染圖（透明 PNG）放到 assets/ring.png 就會自動取代預設環 -->
+<div class="bg" aria-hidden="true">
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
+  <div class="ring" id="ring">
+    <div class="ring-fallback"></div>
+    <img src="assets/ring.png" alt="">
+  </div>
+</div>
+
+<main class="stage">
+
+  <!-- 畫面 1：輸入代碼 -->
+  <section id="screen-enter" class="screen active">
+    <form id="gate" autocomplete="off">
+      <label for="code" class="title">請輸入你的代碼</label>
+      <input id="code" name="code" type="text" maxlength="40"
+             autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="text">
+      <button type="submit" class="btn">進入</button>
+    </form>
+  </section>
+
+  <!-- 畫面 2：結果 -->
+  <section id="screen-result" class="screen">
+    <div class="result">
+      <p class="line code-line">代碼 #<span id="out-code"></span></p>
+      <p class="hello" id="hello">你好</p>
+      <p class="err glitch" data-text="404">404</p>
+      <p class="nf">not found</p>
+      <p class="count" id="count" aria-live="off">0</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
